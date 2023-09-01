@@ -6,7 +6,7 @@ const DocumentsWaiting = () => {
         {imageSrc: '/pdf-image.svg', name: 'Materijali 3'},
         {imageSrc: '/pdf-image.svg', name: 'Materijali 4'},
         {imageSrc: '/word-image.svg', name: 'Materijali 5'},
-        {imageSrc: '/word-image.svg', name: 'Materijali 6'}
+        {imageSrc: '/word-image.svg', name: 'Materijali 6'},
     ];
 
     return (
@@ -15,7 +15,7 @@ const DocumentsWaiting = () => {
                 <div className="bg-[#D9D9D9] w-full rounded-t-lg">
                     <p className='p-4 text-center'>Na cekanju</p>
                 </div>
-                <div className="flex flex-row flex-wrap basis-1/2">
+                <div className="flex flex-row flex-wrap width-full basis-1/2">
                 {Documents.map((document) => (
                         <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
                     ))}

@@ -1,4 +1,5 @@
 import DocumentCard from '../cards/documentCard'
+import SubjectHeader from '../subjectPage/SubjectHeader';
 
 const DocumentGroup = () => {
 
@@ -12,7 +13,7 @@ const DocumentGroup = () => {
         <>
             <div className='flex flex-col' style={{marginLeft:'40px', marginTop:'30px'}}>
             <div className='flex flex-col flex-wrap' style={{marginLeft:'40px', marginTop:'30px'}}>
-            <p className='text-2xl font-bold text-black'>Popularni materijali</p>
+            <SubjectHeader name="Predavanja"/>
                 <div className="flex flex-row flex-wrap">
                     {Documents.map((document) => (
                     <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
@@ -20,7 +21,7 @@ const DocumentGroup = () => {
                 </div>
             </div>
             <div className='flex flex-col flex-wrap' style={{marginLeft:'40px', marginTop:'30px'}}>
-            <p className='text-2xl font-bold text-black'>Auditorne</p>
+            <SubjectHeader name="Auditorne"/>
                 <div className="flex flex-row flex-wrap">
                     {Documents.map((document) => (
                     <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
