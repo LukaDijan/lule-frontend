@@ -6,7 +6,7 @@ export default function home()
         <>
         <div className="bg-cover bg-center" style={{backgroundImage: "url('/books.jpg')", minHeight: "100vh"}}>
             <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed" style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}>
-                <Navbar/>
+                <Navbar isLoggedIn={false}/>
                 <div className="flex justify-center items-center h-screen">
                     <input
                         type="text"
