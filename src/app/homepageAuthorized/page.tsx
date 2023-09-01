@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import SubjectGroup from '../components/homepageAuthorized/SubjectGroup'
+import DocumentGroup from '../components/homepageAuthorized/DocumentGroup'
 
 export default function homeAuthorized()
 {
@@ -9,6 +10,7 @@ export default function homeAuthorized()
             <div>
                 <Navbar isLoggedIn={true}/>
                 <SubjectGroup/>
+                <DocumentGroup/>
             </div>
         </>
     );
