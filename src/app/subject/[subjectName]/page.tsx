@@ -20,7 +20,7 @@ export default function subject()
                 />
             </div>
         </div>
-            <div className='flex flex-row justify-between' id='sranje'>
+            <div className='flex flex-row justify-between'>
                 <DocumentGroup/>
                 <DocumentsWaiting/>
             </div>
