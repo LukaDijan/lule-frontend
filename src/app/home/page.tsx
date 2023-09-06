@@ -2,13 +2,10 @@
 
 import { useState } from 'react';
 import SignInModal from '../components/generic/Modal/SignInModal';
+import RegisterModal from '../components/generic/Modal/RegisterModal'
 
 export default function home()
 {
-
-    const [showSignInModal, setShowSignInModal] = useState(false);
-
-    const handleOnClose = () => {setShowSignInModal(false)};
 
     const isLoggedIn = false;
 
@@ -35,7 +32,7 @@ export default function home()
                                 </>
                             ) : (
                                 <>
-                                <li className='ml-20 uppercase text-lg hover:font-bold' onClick={() => {setShowSignInModal(true)}}>Sign in</li>
+                                <li className='ml-20 uppercase text-lg hover:font-bold'>Sign in</li>
                                 <li className='ml-20 uppercase text-lg hover:font-bold'>Register</li>
                                 </>
                             )
@@ -54,7 +51,6 @@ export default function home()
                 </div>
             </div>
         </div>
-        <SignInModal isVisible={showSignInModal} onClose={handleOnClose}/>
         </>
     );
 }

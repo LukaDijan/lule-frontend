@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import FileModal from '../../components/generic/Modal/FileModal'
 import React, { useState } from 'react'
