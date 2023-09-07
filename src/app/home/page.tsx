@@ -1,8 +1,6 @@
 'use client'
 
-import { useState } from 'react';
-import SignInModal from '../components/generic/Modal/SignInModal';
-import RegisterModal from '../components/generic/Modal/RegisterModal'
+import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import Navbar from '../components/Navbar/Navbar'
 import SubjectGroup from '../components/homepageAuthorized/SubjectGroup'
@@ -10,8 +8,12 @@ import DocumentGroup from '../components/homepageAuthorized/DocumentGroup'
 
 export default function home()
 {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const isLoggedIn = false;
+    useEffect(() => {
+        const isUserLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isUserLoggedIn) setIsLoggedIn(true);
+    }, []);
 
     if (!isLoggedIn) {
     return (
@@ -52,7 +54,7 @@ export default function home()
     return (
         <>
             <div>
-                <Navbar isLoggedIn={true}/>
+                <Navbar isLoggedIn={isLoggedIn}/>
                 <SubjectGroup label="Moji kolegij"/>
                 <DocumentGroup/>
             </div>
