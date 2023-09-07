@@ -1,6 +1,5 @@
 'use client'
 
-import safeLocalStorage from '../components/helpers'
 import { useRouter } from 'next/navigation'
 
 import { useState } from "react";
