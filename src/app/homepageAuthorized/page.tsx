@@ -9,7 +9,7 @@ export default function homeAuthorized()
         <>
             <div>
                 <Navbar isLoggedIn={true}/>
-                <SubjectGroup/>
+                <SubjectGroup label="Moji kolegij"/>
                 <DocumentGroup/>
             </div>
         </>

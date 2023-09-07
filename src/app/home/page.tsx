@@ -3,12 +3,17 @@
 import { useState } from 'react';
 import SignInModal from '../components/generic/Modal/SignInModal';
 import RegisterModal from '../components/generic/Modal/RegisterModal'
+import Link from 'next/link'
+import Navbar from '../components/Navbar/Navbar'
+import SubjectGroup from '../components/homepageAuthorized/SubjectGroup'
+import DocumentGroup from '../components/homepageAuthorized/DocumentGroup'
 
 export default function home()
 {
 
     const isLoggedIn = false;
 
+    if (!isLoggedIn) {
     return (
         <>
         <div className="bg-cover bg-center" style={{backgroundImage: "url('/books.jpg')", minHeight: "100vh"}}>
@@ -23,20 +28,9 @@ export default function home()
                 style={{marginTop:"20px"}}/>
                 <div>
                     <ul className='hidden sm:flex' style={{marginRight:"15px"}}>
-                        {
-                            isLoggedIn ? (
-                                <>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Home</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Profile</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Search</li>
-                                </>
-                            ) : (
-                                <>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Sign in</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Register</li>
-                                </>
-                            )
-                        }
+                                <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Sign in</li></Link>
+                                <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Register</li></Link>
+                                <Link href="/blog"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Blog</li></Link>
                     </ul>
                 </div>
             </div>
@@ -53,4 +47,15 @@ export default function home()
         </div>
         </>
     );
+    }
+
+    return (
+        <>
+            <div>
+                <Navbar isLoggedIn={true}/>
+                <SubjectGroup label="Moji kolegij"/>
+                <DocumentGroup/>
+            </div>
+        </>
+    )
 }

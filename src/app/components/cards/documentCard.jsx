@@ -12,7 +12,7 @@ const DocumentCard = (props) => {
 
     return (
         <>
-            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center' onClick={() => {setShowFileModal(true)}}>
+            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center cursor-pointer' onClick={() => {setShowFileModal(true)}}>
             <div className='bg-[#D9D9D9] rounded-lg'>
             <Image
                 src={props.imageSrc}

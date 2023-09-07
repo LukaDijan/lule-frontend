@@ -1,6 +1,6 @@
 import SubjectCard from '../cards/subjectCard'
 
-const SubjectGroup = () => {
+const SubjectGroup = ({label}) => {
 
     const Subjects = [
         {imageSrc: '/math.jpg', name: 'Matematika 1'},
@@ -13,7 +13,7 @@ const SubjectGroup = () => {
     return (
         <>
         <div className='flex flex-col flex-wrap' style={{marginLeft:'40px', marginTop:'20px'}}>
-        <p className='text-2xl font-bold text-black'>Popularni kolegij</p>
+        <p className='text-2xl font-bold text-black'>{label}</p>
         <div className="flex flex-row flex-wrap">
             {Subjects.map((subject) => (
                 <SubjectCard imageSrc={subject.imageSrc} name={subject.name}/>

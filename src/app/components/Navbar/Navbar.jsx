@@ -1,4 +1,5 @@
 import Logo from '../Navbar/logo';
+import Link from 'next/link'
 
 const Navbar = (props) => {
     return (
@@ -15,14 +16,14 @@ const Navbar = (props) => {
                         {
                             props.isLoggedIn ? (
                                 <>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Home</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Profile</li>
+                                <Link href="/home"><li className='ml-20 uppercase text-lg hover:font-bold'>Home</li></Link>
+                                <Link href="/myProfile"><li className='ml-20 uppercase text-lg hover:font-bold'>Profile</li></Link>
                                 <li className='ml-20 uppercase text-lg hover:font-bold'>Search</li>
                                 </>
                             ) : (
                                 <>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Sign in</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Register</li>
+                                <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Sign in</li></Link>
+                                <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Register</li></Link>
                                 </>
                             )
                         }
