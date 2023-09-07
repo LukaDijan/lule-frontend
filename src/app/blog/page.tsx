@@ -26,7 +26,7 @@ export default function blog()
 
     return (
         <>
-            <div className="flex justify-center items-center h-fit bg-[#D9D9D9]">
+            <div className="flex justify-center items-center h-fit" style={{backgroundImage: "url('/books.jpg')", minHeight: "100vh"}}>
                 <div className="bg-white p-6 rounded-lg drop-shadow-sm flex flex-col shadow h-fit" style={{width:'70%'}}>
                     <p className='text-3xl font-bold'>Objave</p>
                     <ul>
