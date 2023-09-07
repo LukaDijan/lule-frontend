@@ -16,9 +16,9 @@ export default function blog()
     return (
         <>
             <div className="flex justify-center items-center h-fit" style={{backgroundImage: "url('/books.jpg')", minHeight: "100vh"}}>
-                <div className="bg-white p-6 rounded-lg drop-shadow-sm flex flex-col shadow h-fit" style={{width:'70%'}}>
+                <div className="bg-white p-6 rounded-lg drop-shadow-sm flex flex-col shadow h-fit" style={{width:'70%', marginTop:'5%', marginBottom:'5%'}}>
                     <div className='flex flex-row justify-between'>
-                    <p className='text-3xl font-bold'>Objave</p>
+                    <p className='text-4xl font-bold p-4'>Objave</p>
                     <Image
                         src="/back-icon.svg"
                         width={30}
