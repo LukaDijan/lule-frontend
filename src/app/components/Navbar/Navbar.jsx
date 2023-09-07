@@ -1,3 +1,5 @@
+'use client'
+
 import Logo from '../Navbar/logo';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
