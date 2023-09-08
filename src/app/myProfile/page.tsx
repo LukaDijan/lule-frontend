@@ -45,7 +45,7 @@ export default function myProfile()
                                 <h3>{ProfileData[0].semester    }</h3>
                             </div>
                             <button className='rounded-lg bg-[#0096FF] mt-10 text-white' style={{width:'35%', height:'50px', marginLeft:'60%'}}>
-                                Edit
+                                Uredi
                             </button>
                         </div>
                     </div>

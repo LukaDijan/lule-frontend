@@ -43,7 +43,7 @@ export default function register()
                                 style={{width:"500px", marginLeft:'14%', marginBottom:'3%'}}
                                 placeholder="Semestar"
                             />
-                            <label className="text-sm font-extralight" style={{marginLeft:'14%', marginBottom:'2%'}}>profile picture</label>
+                            <label className="text-sm font-extralight" style={{marginLeft:'14%', marginBottom:'2%'}}>profilna slika</label>
                             <input
                                 type="file"
                                 className="block w-full text-sm text-slate-500

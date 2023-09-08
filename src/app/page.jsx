@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link'
-import Navbar from '../components/Navbar/Navbar'
-import SubjectGroup from '../components/homepageAuthorized/SubjectGroup'
-import DocumentGroup from '../components/homepageAuthorized/DocumentGroup'
+import Navbar from './components/Navbar/Navbar'
+import SubjectGroup from './components/homepageAuthorized/SubjectGroup'
+import DocumentGroup from './components/homepageAuthorized/DocumentGroup'
 
 const API_URL = "https://lule-api.adriano.sh"
 
@@ -38,8 +38,8 @@ export default function home() {
                                     style={{ marginTop: "20px" }} />
                                 <div>
                                     <ul className='hidden sm:flex' style={{ marginRight: "15px" }}>
-                                        <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Sign in</li></Link>
-                                        <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Register</li></Link>
+                                        <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Prijavi se</li></Link>
+                                        <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Registriraj se</li></Link>
                                         <Link href="/blog"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Blog</li></Link>
                                     </ul>
                                 </div>
@@ -50,7 +50,7 @@ export default function home() {
                                 type="text"
                                 className="border border-gray-300 rounded-full p-2 bg-[#D9D9D9] opacity-75"
                                 style={{ width: "450px" }}
-                                placeholder="Search..."
+                                placeholder="Pretraži..."
                                 onKeyDown={(e) => {
                                     if (e.key != 'Enter') return false;
 

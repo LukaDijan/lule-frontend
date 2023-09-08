@@ -10,7 +10,7 @@ export default function blog()
     const router = useRouter()
 
     const handleOnClick = () => {
-        router.push("/home");
+        router.push("/");
     }
 
     return (

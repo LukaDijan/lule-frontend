@@ -40,7 +40,7 @@ export default function SignIn()
                 setError("Invalid credentials");
             }
 
-        router.push("/home");
+        router.push("/");
         
     }
 

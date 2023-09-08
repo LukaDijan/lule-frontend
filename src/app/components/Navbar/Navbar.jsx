@@ -33,15 +33,14 @@ const Navbar = (props) => {
                         {
                             props.isLoggedIn ? (
                                 <>
-                                <Link href="/home"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Home</li></Link>
-                                <Link href="/myProfile"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Profile</li></Link>
-                                <li className='ml-20 uppercase text-lg hover:font-bold'>Search</li>
-                                <li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline' onClick={handleLogOut}>Log out</li>
+                                <Link href="/home"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Početna</li></Link>
+                                <Link href="/myProfile"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Profil</li></Link>
+                                <li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline' onClick={handleLogOut}>Odjavi se</li>
                                 </>
                             ) : (
                                 <>
-                                <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Sign in</li></Link>
-                                <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Register</li></Link>
+                                <Link href="/signIn"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Prijavi se</li></Link>
+                                <Link href="/register"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Registriraj se</li></Link>
                                 </>
                             )
                         }
@@ -53,6 +52,3 @@ const Navbar = (props) => {
 }
 
 export default Navbar;
-
-//<li className='ml-20 uppercase text-lg hover:font-bold'>Sign in</li>
-//<li className='ml-20 uppercase text-lg hover:font-bold'>Register</li>
