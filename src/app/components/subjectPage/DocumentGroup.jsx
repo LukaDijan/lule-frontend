@@ -1,33 +1,27 @@
 import DocumentCard from '../cards/documentCard'
 import SubjectHeader from '../subjectPage/SubjectHeader';
 
-const DocumentGroup = () => {
+const MAPPING = {
+    "application/pdf": "/pdf-image.svg"
+}
 
-    const Documents = [
-        {imageSrc: '/pdf-image.svg', name: 'Materijali 1'},
-        {imageSrc: '/pdf-image.svg', name: 'Materijali 2'},
-        {imageSrc: '/word-image.svg', name: 'Materijali 3'}
-    ];
-
+const DocumentGroup = ({ document_groups }) => {
     return (
         <>
-            <div className='flex flex-col' style={{marginLeft:'40px', marginTop:'30px'}}>
-            <div className='flex flex-col flex-wrap' style={{marginLeft:'40px', marginTop:'30px'}}>
-            <SubjectHeader name="Predavanja"/>
-                <div className="flex flex-row flex-wrap">
-                    {Documents.map((document) => (
-                    <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
-                ))}
+            <div className='flex flex-col' style={{ marginLeft: '40px', marginTop: '30px' }}>
+                <div className='flex flex-col flex-wrap' style={{ marginLeft: '40px', marginTop: '30px' }}>
+                    {document_groups.map(document_group => {
+                        return (<>
+                            <SubjectHeader name={document_group.name} />
+                            <div className="flex flex-row flex-wrap">
+                                {document_group.documents.map((document) => (
+                                    <DocumentCard imageSrc={MAPPING[document.content_type]} name={document.name} fileUrl={document.file_url} fileName={document.filename}/>
+                                ))}
+                            </div>
+                        </>)
+                    })
+                    }
                 </div>
-            </div>
-            <div className='flex flex-col flex-wrap' style={{marginLeft:'40px', marginTop:'30px'}}>
-            <SubjectHeader name="Auditorne"/>
-                <div className="flex flex-row flex-wrap">
-                    {Documents.map((document) => (
-                    <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
-                ))}
-                </div>
-            </div>
             </div>
         </>
     );

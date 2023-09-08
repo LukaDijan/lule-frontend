@@ -17,7 +17,7 @@ const DocumentCard = (props) => {
 
     return (
         <>
-            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center cursor-pointer' onClick={() => {
+            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center cursor-pointer' style={{maxWidth:'100px'}} onClick={() => {
                 if (!isAdmin) {
                     setShowFileModal(true);
                 } else {
@@ -34,7 +34,7 @@ const DocumentCard = (props) => {
             </div>
             <p className='mt-2'>{props.name}</p>
             </div>
-            <FileModal isVisible={showFileModal} onClose={handleOnClose}/>
+            <FileModal isVisible={showFileModal} onClose={handleOnClose} fileUrl={props.fileUrl} fileName={props.fileName}/>
             <FileModalAdmin isVisible={showFileModalAdmin} onClose={handleOnCloseAdmin}/>
         </>
     );
