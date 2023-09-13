@@ -6,10 +6,13 @@ import DocumentsWaiting from '../../components/subjectPage/DocumentsWaiting'
 import InfoModal from '../../components/subjectPage/Modal/InfoModal'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 
 export default function subject()
 {
-    const API_URL = "https://lule-api.adriano.sh"
+    const API_URL = "https://lule-api.adriano.sh";
+
+    const router = useRouter()
 
     const [showInfoModal, setShowInfoModal] = useState(false);
     const [courseInfo, setCourseInfo] = useState(null);
@@ -23,6 +26,12 @@ export default function subject()
         .then(response => response.json())
         .then(response => setCourseInfo(response))
     }, [])
+
+    const handleHomeButton = (e) => {
+        e.preventDefault();
+
+        router.push("/");
+    }
 
     return !courseInfo || (
         <>
@@ -45,6 +54,17 @@ export default function subject()
                 <DocumentGroup document_groups={courseInfo.document_groups} courseId={courseInfo.id}/>
                 <DocumentsWaiting/>
             </div>
+        </div>
+        <div style={{position: 'absolute', bottom:'2%', left:'1%'}}>
+            <button className='flex flex-row p-3 bg-[#D9D9D9] rounded-full drop-shadow-lg' onClick={handleHomeButton}>
+                <Image
+                    src="/back-icon.svg"
+                    width={20}
+                    height={20}
+                    alt='back-icon'
+                />
+                <p className='ml-2 hover:font-bold'>Home</p>
+            </button>
         </div>
         <InfoModal onClose={handleOnClose} visible={showInfoModal}/>
         </>
