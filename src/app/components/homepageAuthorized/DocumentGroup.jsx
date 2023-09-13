@@ -14,7 +14,7 @@ const DocumentGroup = () => {
             <p className='text-2xl font-bold text-black'>Popularni materijali</p>
                 <div className="flex flex-row flex-wrap">
                     {Documents.map((document) => (
-                    <DocumentCard imageSrc={document.imageSrc} name={document.name}/>
+                    <DocumentCard imageSrc={document.imageSrc} name={document.name} file/>
                 ))}
                 </div>
         </div>

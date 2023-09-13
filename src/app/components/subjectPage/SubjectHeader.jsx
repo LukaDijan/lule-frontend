@@ -23,7 +23,7 @@ const SubjectHeader = (props) => {
                 className='cursor-pointer'
             />
             </div>
-            <AddFileModal isVisible={showAddFileModal} onClose={handleOnClose}/>
+            <AddFileModal isVisible={showAddFileModal} onClose={handleOnClose} subjectId={props.subjectId}/>
         </>
     );
 }
