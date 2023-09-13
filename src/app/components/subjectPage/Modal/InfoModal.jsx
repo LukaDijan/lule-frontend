@@ -1,7 +1,7 @@
 import React from 'react'
 import CloseButton from '../../../components/generic/buttons/CloseButton'
 
-const InfoModal = ({visible, onClose}) => {
+const InfoModal = ({visible, onClose, subjectName, lessons}) => {
 
     if (!visible) return null;
 
@@ -28,12 +28,19 @@ const InfoModal = ({visible, onClose}) => {
             <div className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center'
             onClick={handleOnClose} id='modalContainer'>
                 <div className='bg-white p-6 rounded-lg drop-shadow-sm flex flex-col'>
-                    <p className='text-xl m-2'>{Description[0].name}</p>
-                    <p className='text-lg m-2'>Semestar: {Description[0].semester}</p>
+                    <p className='text-xl m-2'>{subjectName}</p>
                     <p className='text-lg mt-2 ml-2'>Lekcije:</p>
                     <ul style={{marginTop:'1%', marginBottom:'8%'}}>
-                        {Description[0].units.map((unit) => {
-                           return <li className='text-sm p-2'>-- {unit}</li>
+                        {lessons.map((lesson) => {
+                           return <li className='text-sm p-2'>
+                            <div className='flex flex-col'>
+                                <div className='flex flex-row'>
+                                    <p className='text-lg mr-2 font-bold'>{lesson.number}</p>
+                                    <p className='text-lg font-bold'>{lesson.name}</p>
+                                </div>
+                                <p className='text-md'>{lesson.description}</p>
+                            </div>
+                           </li>
                         })}
                     </ul>
                     <div className='flex flex-row justify-end'>

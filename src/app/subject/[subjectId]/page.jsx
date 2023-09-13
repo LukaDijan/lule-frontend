@@ -66,7 +66,7 @@ export default function subject()
                 <p className='ml-2 hover:font-bold'>Home</p>
             </button>
         </div>
-        <InfoModal onClose={handleOnClose} visible={showInfoModal}/>
+        <InfoModal onClose={handleOnClose} visible={showInfoModal} subjectName={courseInfo.name} lessons={courseInfo.lessons}/>
         </>
     );
 }

@@ -108,6 +108,7 @@ const AddFileModal = ({isVisible, onClose, subjectId}) => {
                     <option value="Predavanja">Predavanja</option>
                     <option value="Auditorne">Auditorne</option>
                     <option value="Ispiti">Ispiti</option>
+                    <option value="Zadaci">Zadaci</option>
                 </select>
 
                 </form>

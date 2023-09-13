@@ -1,6 +1,6 @@
 import DocumentCard from '../cards/documentCard';
 
-const DocumentsWaiting = ({document_groups, courseId}) => {
+const DocumentsWaiting = (props) => {
 
     const MAPPING = {
         "application/pdf": "/pdf-image.svg"
@@ -13,10 +13,11 @@ const DocumentsWaiting = ({document_groups, courseId}) => {
         {imageSrc: '/word-image.svg', name: 'Materijali 6'},
     ];
 
-    const filterDocumentsApproved = (document) => {
+    const filterDocumentsApproved = (document, props) => {
         if (document.status == 'approved') return;
 
-        return <DocumentCard imageSrc={MAPPING[document.content_type]} name={document.name} fileUrl={document.file_url} fileName={document.filename}/>
+        return <DocumentCard imageSrc={MAPPING[document.content_type]} name={document.name} fileUrl={document.file_url}
+        fileName={document.filename} status={document.status} courseId={props.courseId} documentId={document.id}/>
     }
 
     return (
@@ -25,11 +26,11 @@ const DocumentsWaiting = ({document_groups, courseId}) => {
                 <div className="bg-[#D9D9D9] w-full rounded-t-lg">
                     <p className='p-4 text-center'>Na cekanju</p>
                 </div>
-                {document_groups.map(document_group => {
+                {props.document_groups.map(document_group => {
                     return (
                 <div className="flex flex-row flex-wrap width-full basis-1/2">
                 {document_group.documents.map((document) => (
-                                    filterDocumentsApproved(document)
+                                    filterDocumentsApproved(document, props)
                                 ))}
                 </div>
                     )

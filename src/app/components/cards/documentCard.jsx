@@ -3,7 +3,8 @@
 import Image from 'next/image'
 import FileModal from '../../components/generic/Modal/FileModal'
 import FileModalAdmin from '../../components/generic/Modal/FileModalAdmin'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { AdminContext } from '@/app/page'
 
 const DocumentCard = (props) => {
 
@@ -13,11 +14,11 @@ const DocumentCard = (props) => {
     const handleOnClose = () => {setShowFileModal(false)};
     const handleOnCloseAdmin = () => {setShowFileModalAdmin(false)};
 
-    const isAdmin = false;
+    const isAdmin = useContext(AdminContext);
 
     return (
         <>
-            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center cursor-pointer' style={{maxWidth:'100px'}} onClick={() => {
+            <div className='flex flex-col rounded-lg shadow-xl w-fit h-fit m-4 p-2 justify-items-center cursor-pointer' style={{maxWidth:'100px', minHeight:'160px'}} onClick={() => {
                 if (!isAdmin) {
                     setShowFileModal(true);
                 } else {
@@ -32,10 +33,11 @@ const DocumentCard = (props) => {
                 alt={props.name}
             />
             </div>
-            <p className='mt-2'>{props.name}</p>
+            <p className='mt-2 text-center'>{props.name}</p>
             </div>
             <FileModal isVisible={showFileModal} onClose={handleOnClose} fileUrl={props.fileUrl} fileName={props.fileName}/>
-            <FileModalAdmin isVisible={showFileModalAdmin} onClose={handleOnCloseAdmin}/>
+            <FileModalAdmin isVisible={showFileModalAdmin} fileUrl={props.fileUrl} fileName={props.name} status={props.status}
+            courseId={props.courseId} documentId={props.documentId} onClose={handleOnCloseAdmin}/>
         </>
     );
 }
