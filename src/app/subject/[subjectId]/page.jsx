@@ -52,7 +52,7 @@ export default function subject()
         </div>
             <div className='flex flex-row justify-between'>
                 <DocumentGroup document_groups={courseInfo.document_groups} courseId={courseInfo.id}/>
-                <DocumentsWaiting/>
+                <DocumentsWaiting document_groups={courseInfo.document_groups} courseId={courseInfo.id}/>
             </div>
         </div>
         <div style={{position: 'absolute', bottom:'2%', left:'1%'}}>
