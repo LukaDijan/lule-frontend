@@ -37,7 +37,6 @@ const FileModalAdmin = ({isVisible, onClose, fileUrl, fileName, status, courseId
     }
 
     const handleStatus = () => {
-        console.log(status);
         if (status == 'pending') {
             return (
                 <>

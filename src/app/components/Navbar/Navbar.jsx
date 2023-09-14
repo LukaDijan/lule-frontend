@@ -33,7 +33,7 @@ const Navbar = (props) => {
                         {
                             props.isLoggedIn ? (
                                 <>
-                                <Link href="/home"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Početna</li></Link>
+                                <Link href="/"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Početna</li></Link>
                                 <Link href="/myProfile"><li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline'>Profil</li></Link>
                                 <li className='ml-20 uppercase text-lg hover:font-bold cursor-pointer hover:underline' onClick={handleLogOut}>Odjavi se</li>
                                 </>

@@ -8,7 +8,7 @@ import DocumentGroup from './components/homepageAuthorized/DocumentGroup'
 
 const API_URL = "https://lule-api.adriano.sh"
 
-export const AdminContext = React.createContext(true);
+export const AdminContext = React.createContext(false);
 
 export default function home() {
 

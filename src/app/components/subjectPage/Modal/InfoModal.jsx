@@ -28,7 +28,7 @@ const InfoModal = ({visible, onClose, subjectName, lessons}) => {
             <div className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center'
             onClick={handleOnClose} id='modalContainer'>
                 <div className='bg-white p-6 rounded-lg drop-shadow-sm flex flex-col'>
-                    <p className='text-xl m-2'>{subjectName}</p>
+                    <p className='text-3xl m-2 font-bold'>{subjectName}</p>
                     <p className='text-lg mt-2 ml-2'>Lekcije:</p>
                     <ul style={{marginTop:'1%', marginBottom:'8%'}}>
                         {lessons.map((lesson) => {
